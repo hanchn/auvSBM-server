@@ -1,15 +1,28 @@
 {
-  "name": "auv_serve",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type":"module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "express": "^4.18.2"
-  }
+	"name": "auv_serve",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"test": "cross-env NODE_ENV=test node ./test/index.js",
+		"ast": "node ./utils/ast.js",
+		"models": "node ./utils/autoModels.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"cross-env": "^7.0.3",
+		"express": "^4.18.2"
+	},
+	"dependencies": {
+		"js-sql-parser": "^1.6.0",
+		"mysql": "^2.18.1",
+		"mysql2": "^3.9.7",
+		"node-sql-parser": "^5.1.0",
+		"sequelize": "^6.37.3",
+		"sequelize-auto": "^0.8.8",
+		"sequelize-automate": "^1.2.2"
+	},
+	"projectId": "263"
 }
