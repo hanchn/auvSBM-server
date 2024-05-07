@@ -11,7 +11,7 @@
  Target Server Version : 80023
  File Encoding         : 65001
 
- Date: 02/05/2024 10:26:47
+ Date: 07/05/2024 17:06:17
 */
 
 SET NAMES utf8mb4;
@@ -30,6 +30,8 @@ CREATE TABLE `columns` (
   `descrption` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT '描述',
   `jump_url` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '跳转页面地址',
   `template_id` int DEFAULT NULL COMMENT '关联模板',
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -42,6 +44,8 @@ CREATE TABLE `config` (
   `title` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '标题',
   `description` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '描述',
   `keywords` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '关键词',
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -53,6 +57,8 @@ CREATE TABLE `material` (
   `id` int NOT NULL,
   `title` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '素材名',
   `src` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '素材地址',
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -64,6 +70,8 @@ CREATE TABLE `menu` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `type` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -75,6 +83,8 @@ CREATE TABLE `template` (
   `id` int(10) unsigned zerofill NOT NULL,
   `title` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '标题',
   `content` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '内容',
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -88,6 +98,8 @@ CREATE TABLE `user` (
   `tel` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '手机号',
   `gender` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '性别',
   `root` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '权限',
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
