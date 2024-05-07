@@ -1,20 +1,33 @@
+
+import { modelsConn } from '../utils/conn.js'
+const { user } = await modelsConn('user')
+
+/**
+ * 查询所有用户 
+ */
+export const findAllUser = async (params) => { 
+  const data = await user.findAll()
+  return data
+}
+
 /**
  * 查询用户 
  */
-const fintUser = control((params) => { 
+export const findUser = async (params) => { 
+  return null
+}
 
-})
 
 /**
  * 更新用户 
  */
-const updateUser = control('post', (params) => { 
-
-})
+export const updateUser = async (params) => {
+  return null
+}
 
 /**
  * 添加用户 
  */
-const addUser = control('post', (params) => { 
-
-})
+export const addUser = async (params) => {
+  return null
+}

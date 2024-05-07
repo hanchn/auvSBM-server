@@ -3,8 +3,9 @@
  */
 import Sequelize from 'sequelize'
 import config from '../config/config.js'
+import initModels from '../models/init-models.js'
 const { database, username, userpwd, dialect, host, port, logging } = config
-const conn =  () => new Promise(async (reslove, reject) => {
+export const conn =  () => new Promise(async (reslove, reject) => {
     const sequelize = new Sequelize(
         database,
         username,
@@ -19,16 +20,23 @@ const conn =  () => new Promise(async (reslove, reject) => {
         await sequelize.authenticate();
         return reslove(sequelize)
     } catch (error) { 
-        reject(`Unable to connect to the database: ${error}`)
+        return reject(`Unable to connect to the database: ${error}`)
     }
 })
-    /**
-     * 创建模型 
-     * args: {
-     *   table 表名
-     *   params 传参
-     * }
-     */
+
+export const modelsConn = async (key = null) => { 
+    const sequelize = await conn()
+    const models = initModels(sequelize)
+    return key ? {[key] : models[key]} : models
+}
+
+/**
+ * 创建模型 
+ * args: {
+ *   table 表名
+ *   params 传参
+ * }
+ */
 export const sequelize = (sequelize, table, params) => sequelize.define(`${table}`, {...params }, { freezeTableName: true, table, timestamps: false })
 
 

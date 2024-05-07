@@ -5,7 +5,7 @@
 	"type": "module",
 	"main": "index.js",
 	"scripts": {
-		"test": "cross-env NODE_ENV=test node ./test/index.js",
+		"test": "cross-env NODE_ENV=test node ./control/user.js",
 		"ast": "node ./utils/ast.js",
 		"models": "node ./utils/autoModels.js"
 	},
@@ -21,8 +21,7 @@
 		"mysql2": "^3.9.7",
 		"node-sql-parser": "^5.1.0",
 		"sequelize": "^6.37.3",
-		"sequelize-auto": "^0.8.8",
-		"sequelize-automate": "^1.2.2"
+		"sequelize-auto": "^0.8.8"
 	},
 	"projectId": "263"
 }
